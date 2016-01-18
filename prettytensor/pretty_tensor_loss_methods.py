@@ -311,7 +311,7 @@ def _compute_average_correct(input_layer, labels, per_example_weights, topk=1):
   correct_predictions = tf.cast(in_topk, dtype)
 
   # If individual examples are weighted, then we want to normalize by that.
-  if per_example_weights:
+  if per_example_weights is not None:
     per_example_weights = tf.convert_to_tensor(per_example_weights,
                                                name='per_example_weights')
     if ((input_layer.get_shape() and not per_example_weights.get_shape(
