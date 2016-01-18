@@ -1826,5 +1826,5 @@ def _conversion_function(pt_wrapper, dtype=None, name=None, as_ref=False):
   return t
 
 
-tf.ops.register_tensor_conversion_function(
+tf.register_tensor_conversion_function(
     (PrettyTensor, Loss), _conversion_function, 100)
